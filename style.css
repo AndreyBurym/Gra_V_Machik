@@ -1,0 +1,356 @@
+/* Basic styles */
+body {
+    background-image: url(./1920x1080.jpeg);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    z-index: 10000;
+}
+
+#language-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+/* Ball */
+#ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    top: 80px;
+    left: 50px;
+}
+
+/* Points container */
+#points-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Header */
+#header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    position: relative;
+    bottom: 70px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    flex-grow: 1;
+    text-align: start;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#language-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Score display */
+#score {
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pause/Resume button */
+#pause-resume-button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+#pause-resume-button:hover {
+    background-color: #45a049;
+}
+
+#pause-resume-button:active {
+    background-color: #3e8e41;
+}
+
+/* Point */
+.point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 600px) {
+
+    /* Adjust styles for smaller screens */
+    #game-container {
+        width: 100vw;
+        height: 50vh;
+        max-height: 300px;
+        overflow: hidden;
+    }
+
+    #ball {
+        width: 40px;
+        height: 40px;
+        top: calc(50% - 20px);
+    }
+
+    #controls {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* Hide controls on larger screens */
+@media only screen and (min-width: 601px) {
+    #controls {
+        display: none;
+    }
+}
+
+#code-panel {
+    position: relative;
+    top: 100px;
+    left: 165px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    display: block;
+    /* Initially visible */
+    z-index: 1000;
+}
+
+#code-input {
+    width: 200px;
+    padding: 10px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+#code-submit {
+    padding: 10px;
+    position: relative;
+    top: 10px;
+}
+
+#code-message {
+    color: green;
+    margin-top: 10px;
+    position: relative;
+    top: 10px;
+}
+
+#point-generator {
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    display: none;
+    /* Initially hidden */
+    z-index: 100;
+    position: relative;
+    top: 50px;
+    left: 90px;
+}
+
+#generate-points {
+    padding: 10px;
+    position: relative;
+}
+
+#en-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#en-button:hover {
+    background-color: #0056b3;
+}
+
+#ua-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#ua-button:hover {
+    background-color: #0056b3;
+}
+
+#Goiteens {
+    position: absolute;
+    left: 43%;
+}
+
+#main-text {
+    color: #fff;
+    position: relative;
+    top: 30px;
+}
+
+/* Footer Styles */
+#footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 900px;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <div class="title">
+                <h1 data-en="Ball Game" data-ua="Гра м'ячика">Ball Game</h1>
+            </div>
+            <div id="language-selector">
+                <button id="en-button">English</button>
+                <button id="ua-button">Українська</button>
+            </div>
+            <div id="menu">
+                <span id="menu-icon"></span>
+                <span id="shop-button" class="button" data-en="Shop" data-ua="Магазин">Shop</span>
+                <span id="help-button" class="button" data-en="Help" data-ua="Допомога">Help</span>
+                <span id="settings-button" class="button" data-en="Settings" data-ua="Налаштування">Settings</span>
+            </div>
+        </div>
+    </header>
+    <div id="game-container">
+        <div id="ball"></div>
+        <div id="points-container"></div>
+    </div>
+    <div id="score" data-en="Score: 0" data-ua="Рахунок: 0">Score: 0</div>
+    <div id="pause-resume-button" data-en="Pause" data-ua="Пауза">Pause</div>
+    <div id="code-panel">
+        <p>Write a code (secret code gives you a point generator)</p>
+        <input type="text" id="code-input" placeholder="Enter code">
+        <button id="code-submit">Submit</button>
+        <p id="code-message"></p>
+    </div>
+    <div id="point-generator" style="display: none;">
+        <button id="generate-points">Generate 1000 Points</button>
+    </div>
+    <!-- Mobile Controls -->
+    <div id="controls">
+        <button id="move-left-button" data-en="←" data-ua="←">←</button>
+        <button id="jump-button" data-en="Jump" data-ua="Стрибок">Jump</button>
+        <button id="move-right-button" data-en="→" data-ua="→">→</button>
+    </div>
+    <!-- Shop Modal -->
+    <div id="shop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-en="Shop" data-ua="Магазин">Shop</h2>
+            <p data-en="Upgrade Abilities:" data-ua="Покращити можливості:">Upgrade Abilities:</p>
+            <button id="increase-speed-button" class="upgrade-button" data-en="Increase Speed" data-ua="Збільшити швидкість">Increase Speed</button>
+            <button id="increase-jump-button" class="upgrade-button" data-en="Increase Jump Power" data-ua="Збільшити силу стрибка">Increase Jump Power</button>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-en="Help" data-ua="Допомога">Help</h2>
+            <p data-en="Use the left and right buttons to move the ball. Tap the jump button to jump. Collect points to increase your score."
+            data-ua="Використовуйте кнопки ліворуч та праворуч, щоб переміщувати м'яч. Натисніть кнопку стрибка, щоб стрибнути. Збирайте очки, щоб збільшити свій рахунок.">
+                Use the left and right buttons to move the ball. Tap the jump button to jump. Collect points to increase your score.
+            </p>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 data-en="Settings" data-ua="Налаштування">Settings</h2>
+            <p data-en="Customize Background:" data-ua="Налаштування фону:">Customize Background:</p>
+            <label for="background-color-picker" data-en="Background Color:" data-ua="Колір фону:">Background Color:</label>
+            <input type="color" id="background-color-picker" value="#ffffff">
+            <label for="border-color-picker" data-en="Border Color:" data-ua="Колір межі:">Border Color:</label>
+            <input type="color" id="border-color-picker" value="#000000">
+            <label for="box-background-color-picker" data-en="Box Background Color:" data-ua="Колір фону коробки:">Box Background Color:</label>
+            <input type="color" id="box-background-color-picker" value="#ffffff">
+            <p data-en="Customize Ball and Points:" data-ua="Налаштування м'яча та точок:">Customize Ball and Points:</p>
+            <label for="ball-color-picker" data-en="Ball Color:" data-ua="Колір м'яча:">Ball Color:</label>
+            <input type="color" id="ball-color-picker" value="#ff0000">
+            <label for="point-color-picker" data-en="Point Color:" data-ua="Колір точок:">Point Color:</label>
+            <input type="color" id="point-color-picker" value="#00ff00">
+            <div>
+                <label for="speed-slider">Speed:</label>
+                <input type="range" id="speed-slider" min="1" max="10" value="3">
+                <span id="speed-display">3</span>
+            </div>
+        </div>
+    </div>
+    <main id="main">
+        <p id="main-text" data-en="This game was created by 10 years old boy Andrii Burym. He is studying in Goiteens online lessons, this is ball game where you need to collect points" data-ua="Цю гру створив 10-річний хлопчик Андрій Бурим. він навчається на онлайн-уроках Goiteens, це гра з мячем, де потрібно набирати очки">This game was created by 10 years old boy "Andrii Burym", he is studying in Goiteens online lessons, this is ball game where you need to collect points</p>
+        <a href="https://www.youtube.com/c/GoITeens">
+            <img id="Goiteens" width="150" src="./channels4_profile-removebg-preview.png" alt="">
+        </a>
+    </main>
+    <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Ball Game. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html" data-en="Privacy Policy" data-ua="Політика конфіденційності">Privacy Policy</a></li>
+                <li><a href="terms.html" data-en="Terms of Service" data-ua="Умови обслуговування">Terms of Service</a></li>
+                <li><a href="contact.html" data-en="Contact Us" data-ua="Зв'язатися з нами">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
